@@ -2,9 +2,9 @@
 
 {% block title %}注文{% endblock %}
 
-{%- block css %}
-  <link type="text/stylesheet" src="{{ url_for('static', filename='css/orders.css') }}">
-{%- endblock %}
+{% block css %}
+  <link rel="stylesheet" href="../static/css/orders.css">
+{% endblock %}
 
 {%- block content %}
   <h1>注文のページです</h1>
@@ -18,7 +18,7 @@
             <p>塩</p>
           </font>
           <div class="spin">
-            <button id="salt_down" class="spin-minus rounded-circle" type="button">
+            <button id="salt_down" class="spin-minus rounded-circle" type="button" disabled="disabled">
               －
             </button>
             <input id="salt" name="salt" type="number" class="spin-input text-center" min="0" max="3" step="1" value="0" readonly="readonly">
@@ -32,7 +32,7 @@
             <p>ケチャップ</p>
           </font>
           <div class="spin">
-            <button id="catsup_down" class="spin-minus rounded-circle" type="button">
+            <button id="catsup_down" class="spin-minus rounded-circle" type="button" disabled="disabled">
               －
             </button>
             <input id="catsup" name="ketchup" type="number" class="spin-input text-center" min="0" max="3" step="1" value="0" readonly="readonly">
@@ -48,7 +48,7 @@
             <p>三種のチーズ</p>
           </font>
           <div class="spin">
-            <button id="cheese_down" class="spin-minus rounded-circle" type="button">
+            <button id="cheese_down" class="spin-minus rounded-circle" type="button" disabled="disabled">
               －
             </button>
             <input id="cheese" name="cheese" type="number" class="spin-input text-center" min="0" max="3" step="1" value="0" readonly="readonly">
@@ -62,7 +62,7 @@
             <p>バター醤油</p>
           </font>
           <div class="spin">
-            <button id="butter_down" class="spin-minus rounded-circle" type="button">
+            <button id="butter_down" class="spin-minus rounded-circle" type="button" disabled="disabled">
               －
             </button>
             <input id="butter" name="butter" type="number" class="spin-input text-center" min="0" max="3" step="1" value="0" readonly="readonly">
@@ -74,7 +74,7 @@
       </div>
     </div>
   </div>
-  <button class="confirm">
+  <button id="order_confirm" class="confirm" disabled="disabled">
     注文確認
   </button>
 </form>
